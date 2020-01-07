@@ -71,6 +71,13 @@ def search():
     #return a jsonified answer
     return render_template('base.html', posts=posts)
 
+#add route to give jsonified data to backend team
+
+@app.route("/request", methods=['POST', 'GET'])
+def request():
+    #value = request.json["track"]
+    return jsonify(posts)
+
 
 
 if __name__=='__main__':
