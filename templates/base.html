@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>test page</title>
+  </head>
+<body>
+    {% for post in posts %}
+    <h1>{{post.track}}</h1>
+    <p>by {{post.artist}} Duration: {{post.duration_ms}} Danceability {{post.danceability}} </p>
+    <p>energy {{post.energy}} key: {{post.key}} loudness: {{post.loudness}} mode: {{post.mode}} </p>
+    <p>speechiness {{post.speechiness}} acouticness: {{post.acouticness}} instrumentalness{{post.instrumentalness}}</p>
+    <p>liveness {{post.liveness}} valence: {{post.valence}} tempo: {{post.tempo}}</p>
+    <p>time signature: {{post.time_signature}}</p>
+    {% endfor %}
+
+</body>
+</html>
