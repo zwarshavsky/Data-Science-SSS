@@ -10,7 +10,7 @@ flask-sqlalchemy = "*"
 flask = "*"
 psycopg2 = "*"
 gunicorn = "*"
-pickle = "*"
+
 
 [requires]
 python_version = "3.7"
