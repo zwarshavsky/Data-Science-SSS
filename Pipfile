@@ -10,7 +10,9 @@ flask-sqlalchemy = "*"
 flask = "*"
 psycopg2 = "*"
 gunicorn = "*"
-
+pandas = "*"
+numpy = "*"
+scikit-learn = "==0.20.1"
 
 [requires]
 python_version = "3.7"
