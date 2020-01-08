@@ -16,50 +16,14 @@ from sklearn.neighbors import NearestNeighbors
 
 # def create_app():
 app = Flask(__name__)
-posts = [
-        {
-            "artist":"Lady Gaga",
-            "track":"Romance",
-            "danceability":"0.1234",
-            "energy":"0.334",
-            "key":"11.0",
-            "loudness":"12.329",
-            "mode":"1.0",
-            "loudness":"-8.802",
-            "speechiness":"0.031",
-            "acousticness":"0.00157",
-            "instrumentalness":"0.00393",
-            "liveness":"0.458",
-            "valence":"0.396",
-            "tempo":"99.394",
-            "duration_ms":"123456.0",
-            "time_signature":"4.0"
-        },
-        {
-            "artist":"Michael Jackson",
-            "track":"Thriller",
-            "danceability":"0.8888",
-            "energy":"0..6666",
-            "key":"6.0",
-            "loudness":"10.298",
-            "mode":"0.0",
-            "loudness":"-1.257",
-            "speechiness":"0.719",
-            "acousticness":"0.02233",
-            "instrumentalness":"0.0547",
-            "liveness":"0.234",
-            "valence":"0.123",
-            "tempo":"129.501",
-            "duration_ms":"234567.0",
-            "time_signature":"3.0"
-        }
-]
 
 @app.route("/")
+#empty homepae used for testing
 def root():
     return "this is the front page"
 
 @app.route("/search")
+#this was used testing
 def search():
     try:
         if request.method == "POST":
