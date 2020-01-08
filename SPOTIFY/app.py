@@ -14,49 +14,49 @@ from sklearn.neighbors import NearestNeighbors
 
 #DB = SQLAlchemy(app)
 
-# def create_app():
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
 
-@app.route("/")
-#empty homepae used for testing
-def root():
-    return "this is the front page"
+    @app.route("/")
+    #empty homepae used for testing
+    def root():
+        return "this is the front page"
 
-@app.route("/search")
-#this was used testing
-def search():
-    try:
-        if request.method == "POST":
-            #get request (track name) from the user
-            #track_name = request.values['track']
-            track_name = "dummy"
-        # else:
-        #     #set to test track name
-        #     track_name = "The Chantels"
-    except Exception as e:
-        track_name = "Wynona's Big Brown Beaver"
-    # track_name = sorted(request.values['track'])
-    #     #send track name (possibly find track_id) to ML_function
-    # answer = ML_function(track_name)
+    @app.route("/search")
+    #this was used testing
+    def search():
+        try:
+            if request.method == "POST":
+                #get request (track name) from the user
+                #track_name = request.values['track']
+                track_name = "dummy"
+            # else:
+            #     #set to test track name
+            #     track_name = "The Chantels"
+        except Exception as e:
+            track_name = "Wynona's Big Brown Beaver"
+        # track_name = sorted(request.values['track'])
+        #     #send track name (possibly find track_id) to ML_function
+        # answer = ML_function(track_name)
 
-    #return a jsonified answer
-    return render_template('base.html', posts=posts)
+        #return a jsonified answer
+        return render_template('base.html', posts=posts)
 
-#add route to give jsonified data to backend team
+    #add route to give jsonified data to backend team
 
-@app.route("/request/<int:id>", methods=['POST', 'GET'])
-def request(id):
-    #id = request.args.get('id', default = 1, type = int)
-    X = pickle.load(open('./data/X_scaled.pkl', 'rb'))
-    loaded_model = pickle.load(open('./models/kn_model.pkl', 'rb'))
-    results = loaded_model.kneighbors([X[id]])[1]
-    test_r = results.tolist()
-    tj = json.dumps({'results' : test_r})
-    # print(request(1))
-    return tj
+    @app.route("/request/<int:id>", methods=['POST', 'GET'])
+    def request(id):
+        #id = request.args.get('id', default = 1, type = int)
+        X = pickle.load(open('./data/X_scaled.pkl', 'rb'))
+        loaded_model = pickle.load(open('./models/kn_model.pkl', 'rb'))
+        results = loaded_model.kneighbors([X[id]])[1]
+        test_r = results.tolist()
+        tj = json.dumps({'results' : test_r})
+        # print(request(1))
+        return tj
 
+    return app
 
-
-if __name__=='__main__':
-    app.debug=True
-    app.run()
+    # if __name__=='__main__':
+    #     app.debug=True
+    #     app.run()
