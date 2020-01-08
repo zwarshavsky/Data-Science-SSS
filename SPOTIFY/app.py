@@ -5,7 +5,7 @@ import numpy as np
 import pickle
 import json
 from sklearn.neighbors import NearestNeighbors
-
+from .visual import *
 
 #from flask_sqlalchemy import SQLAlchemy
 #from .models import DB, Song_info
@@ -22,25 +22,11 @@ def create_app():
     def root():
         return "this is the front page"
 
-    @app.route("/search")
+    @app.route("/visual/<int:id>", methods =['POST', 'GET'])
     #this was used testing
-    def search():
-        try:
-            if request.method == "POST":
-                #get request (track name) from the user
-                #track_name = request.values['track']
-                track_name = "dummy"
-            # else:
-            #     #set to test track name
-            #     track_name = "The Chantels"
-        except Exception as e:
-            track_name = "Wynona's Big Brown Beaver"
-        # track_name = sorted(request.values['track'])
-        #     #send track name (possibly find track_id) to ML_function
-        # answer = ML_function(track_name)
-
-        #return a jsonified answer
-        return render_template('base.html', posts=posts)
+    def visual(id):
+        viz = base64_visualization(id)
+        return viz
 
     #add route to give jsonified data to backend team
 
