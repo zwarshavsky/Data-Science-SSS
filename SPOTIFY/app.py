@@ -6,10 +6,11 @@ import pickle
 import json
 from sklearn.neighbors import NearestNeighbors
 from .visual import *
-
+from flask_cors import CORS
 
 def create_app():
     app = Flask(__name__)
+    CORS(app)
     """splash page for those who may fall upon root directory, no planned
     functionality, but provide simple instructions on how to use app"""
     @app.route("/")
