@@ -16,8 +16,8 @@ def create_app():
     @app.route("/")
     # empty homepae used for testing
     def root():
-        return """Welcome! Try /request<id> for song suggestions
-                  or /visual/<id> for visualiations"""
+        return """Welcome! Try /request/song id for song suggestions
+                  or /visual/song id for visualizations"""
     """the route that returns the visual data for a requested song id in
     base64 format"""
     @app.route("/visual/<int:id>", methods=['POST', 'GET'])
