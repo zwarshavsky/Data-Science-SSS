@@ -5,6 +5,7 @@ import io, base64
 import pickle
 
 def base64_visualization(id):
+    #Code by David Nagy and Zhenya Warshavsky
     df = pd.read_pickle('./data/df_v2.pkl')
     X = df.drop(['id', 'songid', 'artist', 'track', 'key', 'mode', 'duration_ms', 'time_signature'], axis=1)
     labels = [name.capitalize() for name in X.columns]
