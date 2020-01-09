@@ -15,6 +15,7 @@ numpy = "*"
 scikit-learn = "==0.20.1"
 matplotlib = "*"
 flask-cors = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"

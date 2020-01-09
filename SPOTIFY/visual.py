@@ -40,6 +40,6 @@ def base64_visualization(id):
     ax.text(40.05, 1.75, textstr, fontsize=14,
             verticalalignment='top', bbox=props, color='white')
     buf = io.BytesIO()
-    fig.savefig(buf, format='png')
+    fig.savefig(buf, facecolor=fig.get_facecolor(), format='png',bbox_inches='tight')
     buf.seek(0)
     return base64.b64encode(buf.read())
