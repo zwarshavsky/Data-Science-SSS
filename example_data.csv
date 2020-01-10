@@ -1,6 +1,0 @@
-artist,track,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,duration_ms,time_signature
-Karkkiautomaatti,Tanssi vaan,0.487,0.678,9.0,-7.78,1.0,0.0495,0.0013,0.0551,0.0846,0.87,149.94,157307.0,4.0
-Hudson Mohawke,No One Could Ever,0.662,0.823,4.0,-1.711,0.0,0.0662,4.54e-05,0.952,0.343,0.621,177.745,138960.0,4.0
-Der Mystic,Tangle Of Aspens,0.43,0.96,5.0,-7.741,0.0,0.0431,0.000725,0.925,0.123,0.225,140.001,514290.0,4.0
-Sasha / Turbulence,We Have Got Love,0.663,0.677,3.0,-4.117,0.0,0.0755,0.245,0.0,0.35,0.879,152.085,212413.0,4.0
-Kris Kross,2 Da Beat Ch'yall,0.859,0.741,11.0,-12.329,0.0,0.271,0.00276,0.0,0.325,0.529,98.082,221200.0,4.0
